@@ -9,6 +9,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'core/templates')
 # Application definition
 
 INSTALLED_APPS = [
+    # Django default apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -16,6 +17,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    # Custom apps
+    'account',
     'general',
 ]
 
@@ -51,6 +54,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
+
+# Custom user model for authentication
+
+AUTH_USER_MODEL = 'account.User'
 
 
 # Password validation
