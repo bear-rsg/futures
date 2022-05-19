@@ -55,6 +55,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
+
 # Custom user model for authentication
 
 AUTH_USER_MODEL = 'account.User'
