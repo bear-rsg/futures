@@ -16,7 +16,10 @@ Django Tests:
     - coverage xml -o coverage.xml
   artifacts:
     reports:
-      cobertura: django/coverage.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: django/coverage.xml     
+
 
 accessibility:
   tags:
