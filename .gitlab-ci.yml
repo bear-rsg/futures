@@ -1,7 +1,7 @@
 ---
 
 Django Tests:
-  image: python:3.6
+  image: python:3.9
   tags:
     - bear-gitlab-runners
   before_script:
@@ -24,7 +24,7 @@ Django Tests:
 accessibility:
   tags:
   - bear-gitlab-runners
-  image: python:3.6
+  image: python:3.9
   before_script:
     - apt update
     - DEBIAN_FRONTEND=noninteractive apt install -y npm libx11-xcb1 libxcomposite1 libxcursor1 libxss1 libgbm1
@@ -63,7 +63,7 @@ eslint:
     - echo "Enable eslint when JS added"
 
 curlylint:
-  image: python:3.6
+  image: python:3.9
   tags:
     - bear-gitlab-runners
   before_script:
