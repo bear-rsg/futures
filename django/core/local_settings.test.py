@@ -11,9 +11,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'u6n(9&8g-3=6d1#jyp^#))you-h&y^-5y7*&hu)cpxzeu_7#j+'
 
+# Create Google RECAPTCHA public and private keys: https://www.google.com/recaptcha/
+RECAPTCHA_PUBLIC_KEY = 'xxxxx'
+RECAPTCHA_PRIVATE_KEY = 'xxxxx'
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
+# INTERNAL_IPS = ["127.0.0.1"]
 
 ADMIN_EMAIL = 'bear-rsg@contacts.bham.ac.uk'
 
