@@ -29,7 +29,7 @@ class User(AbstractUser):
             return self.last_name
         else:
             # If no first or last name provided, return first half of email
-            return self.username.split('@')[0]  # e.g. mike.allaway in mike.allaway@ox.ac.uk
+            return self.username.split('@')[0]  # e.g. mike.allaway in mike.allaway@bham.ac.uk
 
     def __str__(self):
         return self.name
