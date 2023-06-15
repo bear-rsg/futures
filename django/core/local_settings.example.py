@@ -13,11 +13,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Online tools can help generate this for you, e.g. https://www.miniwebtool.com/django-secret-key-generator/
 SECRET_KEY = ''
 
+# Create Google RECAPTCHA public and private keys: https://www.google.com/recaptcha/
+RECAPTCHA_PUBLIC_KEY = 'xxxxx'
+RECAPTCHA_PRIVATE_KEY = 'xxxxx'
+
 # Set to True if in development, or False is in production
 DEBUG = True/False
 
 # Set to ['*'] if in development, or specific IP addresses and domains if in production
 ALLOWED_HOSTS = ['*']/['futures.bham.ac.uk']
+
+# Used by Django Debug Toolbar (comment out to disable DDT)
+INTERNAL_IPS = ["127.0.0.1"]
 
 # Provide the email address for the site admin (e.g. the researcher/research team)
 ADMIN_EMAIL = '...@bham.ac.uk'
@@ -32,3 +39,12 @@ DATABASES = {
         },
     }
 }
+
+# Email settings
+EMAIL_USE_TLS = False
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'hostnamehere'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'anemailaddress@bham.ac.uk'
+DEFAULT_FROM_EMAIL = 'anemailaddress@bham.ac.uk'
+NOTIFICATION_EMAIL = 'anemailaddress@bham.ac.uk'

@@ -1,4 +1,9 @@
 # Please follow suitable version specifiers, as outlined in https://www.python.org/dev/peps/pep-0440/#version-specifiers
-# For Django versioning we use ~= (e.g. Django~=3.2.0) which will keep the minor version up to date (e.g. the latest version prior to 3.3.0)
+# For Django versioning we use ~= (e.g. Django~=4.2.0) which will keep the minor version up to date (e.g. the latest version prior to 4.3.0)
 
 Django~=4.2.0
+Pillow~=9.5.0
+django-recaptcha~=3.0.0
+django-embed-video~=1.4.8
+django-debug-toolbar~=4.1.0
+django-admin-list-filter-dropdown~=1.0.3
