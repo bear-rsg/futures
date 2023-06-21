@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static settings_value %}
+
+{% block main %}
+
+<section id="welcome-banner">
+    <div id="welcome-banner-title">
+        FUTURES
+    </div>
+    <div id="welcome-banner-tagline">
+        When we arrive at the future, where will it have come from?
+    </div>
+    <a id="welcome-banner-link" href="#" class="bubblelink">
+        <i class="fas fa-search"></i> Primary Action
+    </a>
+    <i id="welcome-banner-more" class="fas fa-chevron-down"></i>
+</section>
+
+{% include 'snippets/waves/wave1.html' %}
+
+<section class="lightbg">
+    <div class="container">
+        <h2>Welcome</h2>
+        <p>
+            Welcome to FUTURES...
+        </p>
+        <p>
+            Through our website you can ... :
+        </p>
+        <ul>
+            <li><a href="">Link 1</a></li>
+            <li><a href="">Link 2</a></li>
+            <li><a href="">Link 3</a></li>
+            <li><a href="">Link 4</a></li>
+        </ul>
+    </div>
+</section>
+
+{% include 'snippets/waves/wave2.html' %}
+
+<section class="colorbg">
+</section>
+
+{% include 'snippets/waves/wave1.html' %}
+
+<section class="lightbg">
+    <div class="container">
+        <h2>Another Section</h2>
+        <p>
+            Content here...
+        </p>
+        <p>
+            ...
+        </p>
+    </div>
+</section>
+
+{% include 'snippets/waves/wave2.html' %}
+
+<section class="colorbg">
+</section>
+
+{% include 'snippets/waves/wave1.html' %}
+
+<section class="lightbg">
+    <div class="container">
+        <h2>A Third Section</h2>
+        <p>
+            Content here...
+        </p>
+    </div>
+</section>
+
+{% include 'snippets/waves/wave2.html' %}
+
+<section class="colorbg">
+</section>
+
+{% endblock %}

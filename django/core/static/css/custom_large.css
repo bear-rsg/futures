@@ -1,0 +1,41 @@
+@media (min-width: 992px) {
+
+    /* ---------- Navigation ---------- */
+
+    nav.navbar {
+        min-height: 4.5rem;
+    }
+
+    .nav-link {
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+        margin-top: 0.2em;
+    }
+
+    .nav-link.active {
+        border-bottom: 4px solid var(--color-primary);
+    }
+
+    /* ---------- Main ---------- */
+
+    main {
+        min-height: calc(100vh - 4rem);
+    }
+
+    /* ---------- Welcome ---------- */
+
+    #welcome-banner {
+        min-height: calc(100vh - 4rem);
+        padding: 2rem;
+    }
+
+    #welcome-banner-title {
+        font-size: 5em;
+        margin: 30vh 0 1.3em 0;
+    }
+
+    #welcome-banner-tagline {
+        font-size: 2em;
+    }
+
+}
