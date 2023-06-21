@@ -350,7 +350,7 @@ nav.navbar {
 .nav-link {
     font-weight: 400;
     font-size: 1.05rem;
-    color: #606060;
+    color: var(--color-secondary);
     padding: 0.3em;
     opacity: 0.8;
 }
