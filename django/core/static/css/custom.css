@@ -85,7 +85,7 @@ table {
 
 td,
 th {
-    border: 1px solid #AAA;
+    border: 1px solid #767676;
     padding: 0.3em;
     vertical-align: middle;
 }
@@ -350,7 +350,7 @@ nav.navbar {
 .nav-link {
     font-weight: 400;
     font-size: 1.05rem;
-    color: #909090;
+    color: #767676;
     padding: 0.3em;
     opacity: 0.8;
 }
