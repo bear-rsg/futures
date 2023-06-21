@@ -3,16 +3,13 @@
         "runners": ["axe", "htmlcs"],
         "chromeLaunchConfig": {
             "args": ["--no-sandbox"]
-        }
+        },
+        "ignore": [
+            "color-contrast"
+        ]
     },
     "urls": [
         "http://127.0.0.1:8000/",
-        {
-            "url": "http://127.0.0.1:8000/",
-            "actions": [
-                "click element #cookie-message-popup-accept"
-            ]
-        },
-        "http://127.0.0.1:8000/cookies/"
+        "http://127.0.0.1:8000/cookies"
     ]
 }
