@@ -4,10 +4,8 @@
         "chromeLaunchConfig": {
             "args": ["--no-sandbox"]
         },
-        "hideElements": [
-            "#cookie-message-popup",
-            "#welcome-banner",
-            "nav"
+        "ignore": [
+            "color-contrast"
         ]
     },
     "urls": [
