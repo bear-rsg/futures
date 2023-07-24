@@ -9,20 +9,10 @@ html, body {
     background-color: white;
     background: linear-gradient(-45deg, #ee7752, #23d5ab, #23a6d5, #e73c7e, #ee7752, #23d5ab, #23a6d5, #e73c7e);
     background-size: 400% 100%;
-    animation: BodyBackgroundGradient 20s ease-in-out infinite;
 
     /* Variables */
     --color-primary: #0076A1;
     --color-secondary: #008667;
-}
-
-@keyframes BodyBackgroundGradient {
-    0%, 100% {
-        background-position: 0% 20%;
-    }
-    50% {
-        background-position: 100% 20%;
-    }
 }
 
 a,
@@ -51,7 +41,7 @@ h1 {
 
 h2 {
     font-size: 2em;
-    margin: 1.5em 0 0.8em 0;
+    margin: 1em 0 0.8em 0;
     line-height: 1em;
     font-weight: 500;
     color: var(--color-primary);
@@ -323,10 +313,10 @@ form.full-form button[type=submit].button-danger {
 
 @keyframes BubbleAnimate {
     0%, 100% {
-        transform: scale(1);
+        transform: scale(1) rotateZ(360deg); /* performance */
     }
     50% {
-        transform: scale(0.7);
+        transform: scale(0.7) rotateZ(360deg); /* performance */
     }
 }
 
@@ -337,9 +327,12 @@ nav.navbar {
     vertical-align: middle;
     color: var(--color-primary);
     z-index: 950;
-    border-radius: 0 0 2em 2em;
+    border-radius: 2em;
+    margin: 1em auto 0 auto;
+    width: 95%;
     padding-left: 2em;
     padding-right: 2em;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .navbar-brand {
