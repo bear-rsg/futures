@@ -82,7 +82,7 @@ class ResponseAdminView(admin.ModelAdmin):
                     'meta_lastupdated_datetime')
     list_filter = ('vision', 'admin_approved')
     search_fields = ('response_text', 'name')
-    list_per_page = 30
+    list_per_page = 50
     ordering = ('-id',)
     actions = (approve_response, disapprove_response)
 

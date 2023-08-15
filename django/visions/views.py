@@ -74,8 +74,8 @@ class VisionCreateSuccessTemplateView(TemplateView):
 
 class ResponseCreateView(CreateView):
     """
-    Class-based view to create a new models.Response object in the database
-    This works by passing data to the forms.ResponseCreateForm form
+    Class-based view to create a new Response object in the database
+    This works by passing data to the ResponseCreateForm form
     """
 
     form_class = forms.ResponseCreateForm
