@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static settings_value %}
+
+{% block main %}
+
+
+<section class="colorbg">
+</section>
+
+{% include 'snippets/waves/wave-top.html' %}
+
+<section class="lightbg">
+    <div class="container">
+        <h2>Oops</h2>
+        <p>
+            There was a problem with submitting your response and we haven't received it. Please go back and try submitting your response again.
+        </p>
+        <p>
+            If this problem persists please contact us. You can email us at <a href="mailto:{% settings_value 'MAIN_CONTACT_EMAIL' %}">{% settings_value 'MAIN_CONTACT_EMAIL' %}</a>
+        </p>
+    </div>
+</section>
+
+{% include 'snippets/waves/wave2.html' %}
+
+<section class="colorbg">
+</section>
+
+{% endblock %}

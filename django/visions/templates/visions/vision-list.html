@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static embed_video_tags %}
+
+{% block main %}
+
+
+<section class="colorbg">
+</section>
+
+{% include 'snippets/waves/wave-top.html' %}
+
+<section class="lightbg">
+    <div class="container">
+
+        <h2>Visions</h2>
+
+        <!-- Create link -->
+        <section class="create-form-button-link-container">
+            <a href="{% url 'visions:vision-create' %}" class="create-form-button-link"><i class="fas fa-plus"></i> Create Your Vision</a>
+        </section>
+
+        <!-- Visions -->
+        <section id="visions-list">
+            {% if object_list %}
+                <!-- Filter -->
+                <section id="visions-list-filter">
+                    <input type="text" id="visions-list-filter-input" title="Search" name="visions-list-filter-input" placeholder="Search the list of visions">
+                </section>
+                {% for object in object_list %}
+                    <a href="{% url 'visions:vision-detail' object.id %}" class="visions-list-item">
+                        <!-- Title -->
+                        <div class="visions-list-item-title">{{ object.vision_title }}</div>
+                        <!-- Author -->
+                        {% if object.author_name %}
+                            <div class="visions-list-item-author">
+                                By {{ object.author_name }}
+                            </div>
+                        {% endif %}
+                        <!-- Text (preview) -->
+                        <div class="visions-list-item-text">
+                            {{ object.vision_text_preview | safe }}
+                        </div>
+                        <!-- Link -->
+                        {% if object.vision_link %}
+                            <div class="visions-list-item-link">
+                                {{ object.vision_link }}
+                            </div>
+                        {% endif %}
+                        <!-- Image (main) -->
+                        {% if object.vision_image %}
+                            <div class="visions-list-item-image">
+                                <img src="{{ object.vision_image.url }}" alt="Main vision image">
+                            </div>
+                        {% endif %}
+                        <!-- Video -->
+                        {% if object.vision_video %}
+                            <div class="visions-list-item-video video-container">
+                                {% video object.vision_video as vision_video %}
+                                    {% video vision_video %}
+                                {% endvideo %}
+                            </div>
+                        {% endif %}
+                        <!-- Audio -->
+                        {% if object.vision_audio %}
+                            <div class="visions-list-item-audio">
+                                {{ object.vision_audio | safe }}
+                            </div>
+                        {% endif %}
+                    </a>
+                {% endfor %}
+            {% else %}
+                <p>
+                    There are no visions to show yet. Please check back soon.
+                </p>
+            {% endif %}
+        </section>
+
+    </div>
+</section>
+
+{% include 'snippets/waves/wave2.html' %}
+
+<section class="colorbg">
+</section>
+
+<script>
+    $(document).ready(function() {
+        function filter_list(filterText, itemClass)
+        {
+            // For each instance of the class
+            $(itemClass).each(function(){
+                // If the filter text exists within the text contained within this class, then show it
+                if($(this).text().toUpperCase().indexOf(filterText) != -1) $(this).show();
+                // If the filter text does not exist then hide this instance of the class
+                else $(this).hide();
+            });
+        }
+        $("#visions-list-filter-input").on('keyup', function(){
+            var filterText = $(this).val().toUpperCase();
+            filter_list(filterText, ".visions-list-item")
+        });
+    });
+</script>
+
+{% endblock %}

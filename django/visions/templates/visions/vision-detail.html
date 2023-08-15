@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% load static embed_video_tags %}
+
+{% block main %}
+
+
+<section class="colorbg">
+</section>
+
+{% include 'snippets/waves/wave-top.html' %}
+
+<section class="lightbg">
+    <div class="container">
+
+        <!-- Vision -->
+        <div id="vision-detail">
+
+            <!-- Title -->
+            <h2>{{ object.vision_title }}</h2>
+            <!-- Author -->
+            {% if object.author_name %}
+                <div id="vision-detail-author">By {{ object.author_name }}</div>
+            {% endif %}
+
+            <div id="vision-detail-content">
+                <!-- Text -->
+                <div id="vision-detail-content-text">
+                    {{ object.vision_text | safe | linebreaks }}
+                </div>
+                <!-- Link -->
+                <div id="vision-detail-content-link">
+                    {{ object.vision_link_html | safe }}
+                </div>
+                <!-- Images -->
+                {% if object.vision_image %}
+                    <!-- Main image -->
+                    <div id="vision-detail-content-image">
+                        <a href="{{ object.vision_image.url }}" target="_blank"><img src="{{ object.vision_image.url }}" alt="Supporting image for the vision" title="Supporting image for the vision"></a>
+                    </div>
+                    <!-- Additional images -->
+                    {% for additionalimage in object.additionalimages.all %}
+                        <img src="{{ additionalimage.image.url }}" alt="additional vision image" class="vision-detail-content-additionalimage">
+                    {% endfor %}
+                {% endif %}
+                <!-- Video -->
+                {% if object.vision_video %}
+                    <div id="vision-detail-content-video" class="video-container">
+                        {% video object.vision_video as vision_video %}
+                            {% video vision_video %}
+                        {% endvideo %}
+                    </div>
+                {% endif %}
+                <!-- Audio -->
+                <div id="vision-detail-content-audio">
+                    {{ object.vision_audio | safe }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Responses -->
+        <div id="response-create-bg" class="form-hide">
+            <div id="response-create">
+                <!-- Form to create and submit an response to the above vision -->
+                <form enctype="multipart/form-data" id="response-create-form" name="response-create-form" method="POST" action="{% url 'visions:response-create' %}">
+                    <h2>Respond to this Vision</h2>
+                    <!-- Security CSRF token -->
+                    {% csrf_token %}
+                    <!-- Form -->
+                    {{ response_create_form.as_p }}
+                    <!-- Submit form button -->
+                    <button id="response-create-submit" class="btn btn-primary" type="submit">Submit</button>
+                </form>
+                <!-- Form script  -->
+                <script>
+                    $(document).ready(function() {
+                        // Sets the value of the vision in the response form to the current vision id
+                        $('#id_vision').val({{ object.id }}).hide();
+                        // Show form
+                        $('.form-show').on('click', function(){
+                            $('#response-create-bg').show();
+                        });
+                        // Hide form
+                        $('.form-hide').on('click', function(){
+                            $(this).hide();
+                        }).children().on('click', function(e) {
+                            e.stopPropagation();
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+        
+        <!-- List of all users' responses -->
+        <div id="response-list">
+            <h2>Responses</h2>
+
+            <div class="form-show create-form-button-link"><i class="fas fa-comments"></i> Respond to this Vision</div>
+
+            {% for response in responses %}
+
+                <!-- Response -->
+                <div class="response-list-item">
+                    <div class="response-list-item-created">
+                        {{ response.meta_created_datetime }}
+                    </div>
+                    <div class="response-list-item-text">
+                        {{ response.response_text | safe | linebreaksbr }}
+                    </div>
+                    {% if response.response_image %}
+                        <img class="response-list-item-image" src="{{ response.response_image }}">
+                    {% endif %}
+                    {% if response.author_name %}
+                        <div class="response-list-item-name">
+                            {{ response.author_name }}
+                        </div>
+                    {% endif %}
+                </div>
+
+            <!-- If no content... -->
+            {% empty %}
+                <div id="response-list-empty">
+                    There aren't any responses to this vision to show here yet.
+                    <br>
+                    Be the first by <a href="#" class="form-show">submitting your response!</a>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+{% include 'snippets/waves/wave2.html' %}
+
+<section class="colorbg">
+</section>
+
+
+<script>
+    $(document).ready(function() {
+        {% include 'visions/js/author-data-cookies.js' %}
+    });
+</script>
+
+{% endblock %}
