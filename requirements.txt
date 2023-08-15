@@ -7,3 +7,5 @@ django-recaptcha~=3.0.0
 django-embed-video~=1.4.9
 django-debug-toolbar~=4.1.0
 django-admin-list-filter-dropdown~=1.0.3
+coverage
+flake8
