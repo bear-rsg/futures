@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+
+
+<section class="colorbg">
+</section>
+
+{% include 'snippets/waves/wave-top.html' %}
+
+<section class="lightbg">
+    <div class="container">
+        <div id="vision-create">
+            <h2>Create Your Vision</h2>
+            <form enctype="multipart/form-data" id="vision-create-form" name="vision-create-form" method="POST">
+
+                <!-- Security CSRF token -->
+                {% csrf_token %}
+
+                <!-- Form -->
+                {{ form.as_p }}
+
+                <!-- Additional images -->
+                <p>
+                    <label for="id_vision_additionalimages">Additional Vision Images:</label>
+                    <input id="id_vision_additionalimages" type="file" name="additionalimages" accept="image/*" multiple>
+                    <span class="helptext">Optional. Upload additional images to support your vision.</span>
+                </p>
+
+                <!-- Media Info -->
+                <div id="vision-create-media-info">
+                    You can upload your visions in a variety of ways, including text, sharing a web link, uploading images, sharing a video from YouTube, or audio from SoundCloud.
+                </div>
+                <!-- Media Tabs -->
+                <div id="vision-create-media-tabs">
+                    <span class="vision-create-media-tabs-tab" data-tab="text">
+                        <i class="fas fa-keyboard"></i>
+                        <label>Text</label>
+                    </span><!--
+                    --><span class="vision-create-media-tabs-tab" data-tab="link">
+                        <i class="fas fa-link"></i>
+                        <label>Link</label>
+                    </span><!--
+                    --><span class="vision-create-media-tabs-tab" data-tab="image">
+                        <i class="fas fa-images"></i>
+                        <label>Images</label>
+                    </span><!--
+                    --><span class="vision-create-media-tabs-tab" data-tab="video">
+                        <i class="fas fa-video"></i>
+                        <label>Video</label>
+                    </span><!--
+                    --><span class="vision-create-media-tabs-tab" data-tab="audio">
+                        <i class="fas fa-headphones"></i>
+                        <label>Audio</label>
+                    </span>
+                </div>
+                <!-- Media Content -->
+                <div id="vision-create-media-content">
+                    <div class="vision-create-media-content-item" data-content="text"></div>
+                    <div class="vision-create-media-content-item" data-content="link"></div>
+                    <div class="vision-create-media-content-item" data-content="image"></div>
+                    <div class="vision-create-media-content-item" data-content="video"></div>
+                    <div class="vision-create-media-content-item" data-content="audio"></div>
+                </div>
+
+                <!-- Submit form button -->
+                <button id="vision-create-submit" class="btn btn-primary" type="submit">Submit Your Vision</button>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+{% include 'snippets/waves/wave2.html' %}
+
+<section class="colorbg">
+</section>
+
+<script>
+    $(document).ready(function(){
+
+        // Load relevant section when tab is clicked (and hide all other sections)
+        $('.vision-create-media-tabs-tab').on('click', function(){
+            // Mark just this tab as active
+            $('.vision-create-media-tabs-tab').removeClass('active');
+            $(this).addClass('active');
+            // Show just this section
+            $('.vision-create-media-content-item').hide();
+            $(`.vision-create-media-content-item[data-content="${$(this).attr('data-tab')}"`).show();
+        });
+
+        // Structure the form into tabs, correct order, etc.
+        // Move media fields to related content block
+        var medias = ['text', 'image', 'video', 'audio', 'link'];
+        medias.forEach(function(media){
+            $(`#id_vision_${media}`).closest('p').detach().appendTo(`.vision-create-media-content-item[data-content="${media}"]`);
+        });
+        // Move the additional images to below the image input
+        $('#id_vision_additionalimages').closest('p').detach().insertAfter($('#id_vision_image').closest('p'));
+        // Move the tabs and content
+        $('#vision-create-media-info, #vision-create-media-tabs, #vision-create-media-content').detach().insertAfter($('#id_vision_title').closest('p'));
+        // Show the first media on page load
+        $('.vision-create-media-tabs-tab').first().trigger('click');
+        // Show the full form now it's in the correct order
+        $('#vision-create-form').show();
+
+        {% include 'visions/js/author-data-cookies.js' %}
+
+    });
+</script>
+
+{% endblock %}

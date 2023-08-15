@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static settings_value %}
+
+{% block main %}
+
+
+<section class="colorbg">
+</section>
+
+{% include 'snippets/waves/wave-top.html' %}
+
+<section class="lightbg">
+    <div class="container">
+        <h2>Thanks!</h2>
+        <p>
+            Your vision has been sent to us successfully.
+        </p>
+        <p>
+            Please note that <strong>all visions have to be reviewed and approved by the project team before being listed on this website.</strong> Once a member of our team has approved your vision it will appear in the list of visions for everyone to see.
+        </p>
+        <p>
+            If you need to contact us about your vision, you can email us at <a href="mailto:{% settings_value 'MAIN_CONTACT_EMAIL' %}">{% settings_value 'MAIN_CONTACT_EMAIL' %}</a>
+        </p>
+    </div>
+</section>
+
+{% include 'snippets/waves/wave2.html' %}
+
+<section class="colorbg">
+</section>
+
+{% endblock %}

@@ -27,7 +27,7 @@ ALLOWED_HOSTS = ['*']/['futures.bham.ac.uk']
 INTERNAL_IPS = ["127.0.0.1"]
 
 # Provide the email address for the site admin (e.g. the researcher/research team)
-ADMIN_EMAIL = '...@bham.ac.uk'
+MAIN_CONTACT_EMAIL = '...@bham.ac.uk'
 
 # Set the database name below
 DATABASES = {

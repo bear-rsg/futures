@@ -10,9 +10,14 @@
     <div id="welcome-banner-tagline">
         When we arrive at the future, where will it have come from?
     </div>
-    <a id="welcome-banner-link" href="#" class="bubblelink">
-        <i class="fas fa-search"></i> Primary Action
-    </a>
+    <div id="welcome-banner-links">
+        <a href="{% url 'visions:vision-list' %}" class="welcome-banner-links-link bubblelink">
+            <i class="fas fa-search"></i> Browse Visions
+        </a>
+        <a href="{% url 'visions:vision-create' %}" class="welcome-banner-links-link bubblelink">
+            <i class="fas fa-plus"></i> Create Your Vision
+        </a>
+    </div>
     <i id="welcome-banner-more" class="fas fa-chevron-down"></i>
 </section>
 
