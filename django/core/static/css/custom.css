@@ -375,6 +375,7 @@ main section.colorbg {
     color: white;
     text-align: center;
     height: 100vh;
+    z-index: 10000;
 }
 
 #welcome-banner-title {
@@ -397,7 +398,7 @@ main section.colorbg {
     margin: 3vh auto;
     width: fit-content;
     opacity: 0.9;
-    z-index: 1000;
+    z-index: 10000;
 }
 
 .welcome-banner-links-link:hover {
@@ -421,6 +422,18 @@ main section.colorbg {
     50% {
         padding-top: 0.64em;
     }
+}
+
+.welcome-content p,
+.welcome-content ul {
+    font-size: 1.5em;
+    line-height: 2em;
+    text-align: center;
+    margin: 2em 0;
+}
+
+.welcome-content li {
+    text-align: left;
 }
 
 /* ---------- Visions ---------- */
@@ -705,10 +718,11 @@ footer {
 
 #footer-content {
     z-index: 100;
+    margin-top: -5em;
 }
 
 #footer-content-logos img {
-    height: 5em;
+    height: 5.5em;
     margin: 1em 2em;
 }
 
