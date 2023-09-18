@@ -436,7 +436,7 @@ main section.colorbg {
     text-align: left;
 }
 
-/* ---------- Visions ---------- */
+/* ---------- Visions & Inspirations ---------- */
 
 #permanent-vision-create-link {
     display: none;
@@ -458,13 +458,15 @@ main section.colorbg {
     opacity: 1;
 }
 
-#visions-list {
+#visions-list,
+#inspirations-list {
     padding: 1.5em 0;
     margin-top: 1em;
     text-align: center;
 }
 
-#visions-list-filter-input {
+#visions-list-filter-input,
+#inspirations-list-filter-input {
     border: 2px solid var(--color-primary);
     color: var(--color-primary);
     font-weight: bold;
@@ -478,12 +480,14 @@ main section.colorbg {
     font-size: 1.1em;
 }
 
-#visions-list-filter-input::placeholder {
+#visions-list-filter-input::placeholder,
+#inspirations-list-filter-input::placeholder {
     color: #505050;
     font-weight: normal;
 }
 
-.visions-list-item {
+.visions-list-item,
+.inspirations-list-item {
     width: calc(33% - 1.3em);
     min-width: 20em;
     display: inline-block;
@@ -495,14 +499,16 @@ main section.colorbg {
     vertical-align: top;
 }
 
-.visions-list-item:hover {
+.visions-list-item:hover,
+.inspirations-list-item:hover {
     background-color: var(--color-primary);
     border: 1px solid var(--color-primary);
     color: white;
     text-decoration: none;
 }
 
-.visions-list-item-title {
+.visions-list-item-title,
+.inspirations-list-item-title {
     font-weight: bold;
     font-size: 1.2em;
 }
@@ -514,26 +520,33 @@ main section.colorbg {
     font-size: 0.9em;
 }
 
-.visions-list-item-text {
+.visions-list-item-text,
+.inspirations-list-item-text {
     margin: 0.8em 0;
 }
 
-.visions-list-item-image img {
+.visions-list-item-image img,
+.inspirations-list-item-image img {
     width: 100%;
     margin: 3em auto 1em auto;
 }
 
-.visions-list-item-video {
+.visions-list-item-video,
+.inspirations-list-item-video {
     margin: 3em 0 1em 0;
 }
 
-.visions-list-item-audio {
+.visions-list-item-audio,
+.inspirations-list-item-audio {
     padding: 3em 0 1em 0;
 }
 
 .visions-list-item-link,
 #vision-detail-content-link,
-#vision-detail-content-link a {
+#vision-detail-content-link a,
+.inspirations-list-item-link,
+#inspiration-detail-content-link,
+#inspiration-detail-content-link a {
     background: var(--color-primary);
     color: white;
     padding: 0.7em;
@@ -566,8 +579,9 @@ label[for=id_vision] {
 }
 
 #vision-detail-content-image img,
-.vision-detail-content-additionalimage {
-    max-width: 80%;
+.vision-detail-content-additionalimage,
+#inspiration-detail-image img {
+    max-width: 90%;
     margin: 2em auto;
     display: block;
 }
@@ -592,7 +606,7 @@ label[for=id_vision] {
 #vision-create-media-tabs {
     background: var(--color-primary-dark);
     color: white;
-    border-radius: 1em 1em 0 0;
+    border-radius: 0.64em 0.64em 0 0;
     overflow: hidden;
 }
 
@@ -636,7 +650,7 @@ label[for=id_vision] {
     padding: 1.3em;
     background: rgba(0, 0, 0, 0.05);
     margin-bottom: 5em;
-    border-radius: 0 0 1em 1em;
+    border-radius: 0 0 0.64em 0.64em;
 }
 
 #vision-create-form input[type='file'] {

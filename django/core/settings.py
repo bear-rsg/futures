@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     # See: https://github.com/praekelt/django-recaptcha/issues/183
     'captchanotimeout',
     'captcha',
+    'ckeditor',
     'embed_video',
     'debug_toolbar',
     'django_admin_listfilter_dropdown',
@@ -29,6 +30,7 @@ INSTALLED_APPS = [
     'account',
     'general',
     'visions',
+    'inspirations'
 ]
 
 MIDDLEWARE = [

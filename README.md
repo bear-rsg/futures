@@ -1,4 +1,4 @@
-# FUTURES
+# FutureVisions
 
 This project is a Django-based website created by the Research Software Group for Max Saunders at the University of Birmingham.
 

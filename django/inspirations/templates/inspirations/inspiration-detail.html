@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static embed_video_tags %}
+
+{% block main %}
+
+
+<section class="colorbg">
+</section>
+
+{% include 'snippets/waves/wave-top.html' %}
+
+<section class="lightbg">
+
+    <div id="inspiration-detail" class="container">
+        
+        <h2 id="inspiration-detail-title">{{ object.inspiration_title }}</h2>
+        
+        <div id="inspiration-detail-text">
+            {{ object.inspiration_text | safe }}
+        </div>
+
+        {% if object.inspiration_link %}
+            <div id="inspiration-detail-link">
+                <label>Link:</label>
+                <a href="{{ object.inspiration_link }}" target="_blank">{{ object.inspiration_link }}</a>
+            </div>
+        {% endif %}
+
+        {% if object.inspiration_file %}
+            <div id="inspiration-detail-file">
+                <label>Download file:</label>
+                <a href="{{ object.inspiration_file.url }}">{{ object.inspiration_file_name }}</a>
+            </div>
+        {% endif %}
+
+        {% if object.inspiration_audio %}
+            <div id="inspiration-detail-video" class="video-container">
+                {{ object.inspiration_audio | safe }}
+            </div>
+        {% endif %}
+
+        {% if object.inspiration_image %}
+            <div id="inspiration-detail-image">
+                <a href="{{ object.inspiration_image.url }}"><img src="{{ object.inspiration_image.url }}" alt="Image for {{ object.inspiration_title }}"></a>
+            </div>
+        {% endif %}
+
+        {% if object.inspiration_video %}
+            <div id="inspiration-detail-video" class="video-container">
+                {% video object.inspiration_video as inspiration_video %}
+                    {% video inspiration_video %}
+                {% endvideo %}
+            </div>
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% include 'snippets/waves/wave2.html' %}
+
+<section class="colorbg">
+</section>
+
+
+{% endblock %}
