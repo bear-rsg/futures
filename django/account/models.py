@@ -1,3 +1,4 @@
+from django.db import models
 from django.contrib.auth.models import AbstractUser, UserManager
 
 
@@ -15,6 +16,8 @@ class User(AbstractUser):
     """
     Custom user extends the standard Django user model, providing additional properties
     """
+
+    email = models.EmailField()  # override default email field, not allowing it to be blank/null as used as username
 
     # Custom user manager used to allow for case-insensitive usernames
     objects = CustomUserManager()
@@ -35,6 +38,8 @@ class User(AbstractUser):
         return self.name
 
     def save(self, *args, **kwargs):
+        # Ensure all accounts are 'staff' so can access admin dashboard
+        self.is_staff = True
         # Force email and username to be lower case and identical, so users can login with email
         self.email = self.email.strip().lower()
         self.username = self.email
