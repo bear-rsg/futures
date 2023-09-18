@@ -12,7 +12,41 @@ class CustomUserAdmin(UserAdmin):
     Customise the admin interface: User
     """
 
-    readonly_fields = ['date_joined', 'last_login']
+    readonly_fields = ['username', 'date_joined', 'last_login']
+    add_fieldsets = (
+        (
+            None,
+            {
+                'classes': ('wide',),
+                'fields': (
+                    'email',
+                    'first_name',
+                    'last_name',
+                    'password1',
+                    'password2',
+                    'groups'
+                ),
+            },
+        ),
+    )
+    fieldsets = (
+        (
+            None,
+            {
+                'classes': ('wide',),
+                'fields': (
+                    'email',
+                    'first_name',
+                    'last_name',
+                    'password',
+                    'groups',
+                    'is_active',
+                    'date_joined',
+                    'last_login'
+                ),
+            },
+        ),
+    )
 
 
 # Unregister default Group
