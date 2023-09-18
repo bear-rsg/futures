@@ -3,7 +3,7 @@ from .models import User
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin, GroupAdmin
 
-admin.site.site_header = 'FUTURES: Admin Dashboard'
+admin.site.site_header = 'FutureVisions: Admin Dashboard'
 
 
 @admin.register(User)

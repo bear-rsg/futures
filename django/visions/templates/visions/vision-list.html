@@ -15,17 +15,17 @@
         <h2>Visions</h2>
 
         <!-- Create link -->
-        <section class="create-form-button-link-container">
+        <div class="create-form-button-link-container">
             <a href="{% url 'visions:vision-create' %}" class="create-form-button-link"><i class="fas fa-plus"></i> Create Your Vision</a>
-        </section>
+        </div>
 
         <!-- Visions -->
-        <section id="visions-list">
+        <div id="visions-list">
             {% if object_list %}
                 <!-- Filter -->
-                <section id="visions-list-filter">
+                <div id="visions-list-filter">
                     <input type="text" id="visions-list-filter-input" title="Search" name="visions-list-filter-input" placeholder="Search the list of visions">
-                </section>
+                </div>
                 {% for object in object_list %}
                     <a href="{% url 'visions:vision-detail' object.id %}" class="visions-list-item">
                         <!-- Title -->
@@ -73,7 +73,7 @@
                     There are no visions to show yet. Please check back soon.
                 </p>
             {% endif %}
-        </section>
+        </div>
 
     </div>
 </section>

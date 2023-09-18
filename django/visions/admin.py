@@ -1,8 +1,6 @@
 from django.contrib import admin
 from . import models
 
-admin.site.site_header = 'FUTURES: Admin Dashboard'
-
 
 def approve(modeladmin, request, queryset):
     """

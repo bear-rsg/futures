@@ -54,7 +54,7 @@ class Vision(models.Model):
         # Only send if this is a newly created object and not in debug
         if self.meta_created_datetime is None and settings.DEBUG is False:
             try:
-                send_mail('FUTURES: A new vision has been shared',
+                send_mail('FutureVisions: A new vision has been shared',
                           'There has been a new vision submitted to the FUTURES website.',
                           settings.DEFAULT_FROM_EMAIL,
                           settings.NOTIFICATION_EMAIL,
@@ -113,7 +113,7 @@ class Response(models.Model):
         # Only send if this is a newly created object and not in debug
         if self.meta_created_datetime is None and settings.DEBUG is False:
             try:
-                send_mail('FUTURES: A new response to a vision has been shared',
+                send_mail('FutureVisions: A new response to a vision has been shared',
                           'There has been a new response to a vision submitted to the FUTURES website.',
                           settings.DEFAULT_FROM_EMAIL,
                           settings.NOTIFICATION_EMAIL,
