@@ -24,13 +24,17 @@
 
             <div id="vision-detail-content">
                 <!-- Text -->
-                <div id="vision-detail-content-text">
-                    {{ object.vision_text | safe | linebreaks }}
-                </div>
+                {% if object.vision_text %}
+                    <div id="vision-detail-content-text">
+                        {{ object.vision_text | safe | linebreaks }}
+                    </div>
+                {% endif %}
                 <!-- Link -->
-                <div id="vision-detail-content-link">
-                    {{ object.vision_link_html | safe }}
-                </div>
+                {% if object.vision_link %}
+                    <div id="vision-detail-content-link">
+                        {{ object.vision_link_html | safe }}
+                    </div>
+                {% endif %}
                 <!-- Images -->
                 {% if object.vision_image %}
                     <!-- Main image -->
