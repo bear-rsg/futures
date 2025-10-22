@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     # captchanotimeout is a custom app to override "captcha" to prevent 2 minute timeouts
     # See: https://github.com/praekelt/django-recaptcha/issues/183
     'captchanotimeout',
-    'captcha',
+    'django_recaptcha',
     'ckeditor',
     'embed_video',
     'debug_toolbar',
