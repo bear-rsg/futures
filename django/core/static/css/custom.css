@@ -11,7 +11,7 @@ html, body {
     background-size: 400% 100%;
 
     /* Variables */
-    --color-primary: #9D2A58;
+    --color-primary: #952854;
     --color-primary-dark: #802548;
     --color-secondary: #23a6d5;
 }
@@ -747,16 +747,17 @@ footer {
 footer p {
     margin-top: 2em;
     display: block;
+    font-weight: 400;
 }
 
 footer a {
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     opacity: 1;
     text-decoration: underline;
 }
 
 footer a:hover {
-    color: var(--color-secondary);
+    color: var(--color-primary);
     opacity: 1;
     text-decoration: underline;
 }
