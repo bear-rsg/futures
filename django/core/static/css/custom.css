@@ -11,7 +11,7 @@ html, body {
     background-size: 400% 100%;
 
     /* Variables */
-    --color-primary: #bc3267;
+    --color-primary: #9D2A58;
     --color-primary-dark: #802548;
     --color-secondary: #23a6d5;
 }
@@ -337,7 +337,7 @@ nav.navbar {
 .nav-link {
     font-weight: 400;
     font-size: 1.05rem;
-    color: #606060;
+    color: #505050;
     padding: 0.3em;
     opacity: 0.8;
 }

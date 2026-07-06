@@ -6,6 +6,6 @@
         }
     },
     "urls": [
-        "http://localhost:8000/cookies/"
+        "http://localhost:8000/"
     ]
 }
