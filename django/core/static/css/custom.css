@@ -755,13 +755,13 @@ footer p {
 footer a {
     color: var(--color-primary-dark);
     opacity: 1;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 footer a:hover {
     color: var(--color-primary);
     opacity: 1;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 /* ---------- Error Pages ---------- */
