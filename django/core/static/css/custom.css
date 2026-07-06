@@ -742,6 +742,8 @@ footer {
 
 #footer-content-text {
     margin-top: 2em;
+    background: white;
+    color: black;
 }
 
 footer p {
@@ -753,6 +755,7 @@ footer p {
 }
 
 footer a {
+    background: white;
     color: var(--color-primary-dark);
     opacity: 1;
     text-decoration: underline;
