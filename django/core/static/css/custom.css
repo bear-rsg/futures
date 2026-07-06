@@ -11,7 +11,7 @@ html, body {
     background-size: 400% 100%;
 
     /* Variables */
-    --color-primary: #bc3267;
+    --color-primary: #952854;
     --color-primary-dark: #802548;
     --color-secondary: #23a6d5;
 }
@@ -337,7 +337,7 @@ nav.navbar {
 .nav-link {
     font-weight: 400;
     font-size: 1.05rem;
-    color: #606060;
+    color: #505050;
     padding: 0.3em;
     opacity: 0.8;
 }
@@ -450,12 +450,12 @@ main section.colorbg {
     font-size: 1.09em;
     font-weight: bold;
     z-index: 1000;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 #permanent-vision-create-link:hover {
     text-decoration: none;
-    opacity: 1;
+    opacity: 0.9;
 }
 
 #visions-list,
@@ -742,21 +742,27 @@ footer {
 
 #footer-content-text {
     margin-top: 2em;
+    background: white;
+    color: black;
 }
 
 footer p {
     margin-top: 2em;
     display: block;
+    background: white;
+    color: black;
+    font-weight: 500;
 }
 
 footer a {
-    color: var(--color-primary);
+    background: white;
+    color: var(--color-primary-dark);
     opacity: 1;
     text-decoration: underline;
 }
 
 footer a:hover {
-    color: var(--color-secondary);
+    color: var(--color-primary);
     opacity: 1;
     text-decoration: underline;
 }
